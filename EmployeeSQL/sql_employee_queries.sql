@@ -26,3 +26,11 @@ JOIN "Department_manager" as mgr
 ON dep.dept_no = mgr.dept_no
 JOIN "Employee" as emp
 ON mgr.emp_no = emp.emp_no
+
+--list the department of each employee with employee number, last name, first name, department name
+SELECT emp.emp_no, emp.last_name, emp.first_name, dep.dept_name
+FROM "Employee" as emp
+JOIN "Department_employees" as depemp
+ON emp.emp_no = depemp.emp_no
+JOIN "Department" as dep
+on depemp.dept_no = dep.dept_no
