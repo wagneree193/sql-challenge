@@ -34,3 +34,9 @@ JOIN "Department_employees" as depemp
 ON emp.emp_no = depemp.emp_no
 JOIN "Department" as dep
 on depemp.dept_no = dep.dept_no
+
+--list first name, last name and sex for employees whos first name is hercules and last names begin with b
+SELECT first_name, last_name, sex
+FROM "Employee"
+WHERE first_name = 'Hercules'
+AND last_name like 'B%';
