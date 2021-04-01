@@ -12,11 +12,11 @@ SELECT hire_date
 FROM "Employee";
 
 -- list first name, last name and hire date for employees hired in 1986
-SELECT CONVERT (VARCHAR, hire_date);
+-- list first name, last name and hire date for employees hired in 1986
 
 SELECT last_name, first_name, hire_date
 FROM "Employee"
-WHERE CONVERT(VARCHAR, hire_date);
+WHERE hire_date BETWEEN '1986-01-01' AND '1986-12-31';
 
 
 --list the manager of each department with department number, department name, mgr employee number, last name, first name
