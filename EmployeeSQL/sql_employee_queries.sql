@@ -56,3 +56,8 @@ FROM "Employee"
 GROUP BY last_name
 ORDER BY
 COUNT(last_name) DESC;
+
+-- GOT ME GOOD >.<
+SELECT last_name, first_name
+FROM "Employee"
+WHERE emp_no = '499942';
