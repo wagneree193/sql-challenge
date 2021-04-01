@@ -40,3 +40,12 @@ SELECT first_name, last_name, sex
 FROM "Employee"
 WHERE first_name = 'Hercules'
 AND last_name like 'B%';
+
+--list all employees in sales department, employee number, last name, first name and dept name
+SELECT emp.emp_no, emp.last_name, emp.first_name, dep.dept_name
+FROM "Employee" as emp
+JOIN "Department_employees" as depemp
+on emp.emp_no = depemp.emp_no
+JOIN "Department" as dep
+on depemp.dept_no = dep.dept_no
+WHERE dept_name = 'Sales';
