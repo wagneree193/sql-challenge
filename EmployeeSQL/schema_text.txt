@@ -1,0 +1,39 @@
+Employee
+-
+emp_no VARCHAR pk
+title_id VARCHAR fk >- Title.title_id
+birth_date DATE
+first_name VARCHAR
+last_name VARCHAR
+sex VARCHAR
+hire_date DATE
+
+
+Department
+-
+dept_no  VARCHAR pk 
+dept_name VARCHAR 
+
+# need to use composite key here bc dept no 
+# and emp no are shared
+Department_manager
+-
+dept_no pk VARCHAR fk >- Department.dept_no
+emp_no pk VARCHAR  fk >- Employee.emp_no
+
+Department_employees
+-
+emp_no VARCHAR fk -< Employee.emp_no
+dept_no VARCHAR fk - Department.dept_no
+
+
+
+Salaries
+-
+salary_id VARCHAR fk >- Employee.emp_no
+salary BIGINT
+
+Title
+-
+title_id VARCHAR pk
+title VARCHAR
