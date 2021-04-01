@@ -49,3 +49,10 @@ on emp.emp_no = depemp.emp_no
 JOIN "Department" as dep
 on depemp.dept_no = dep.dept_no
 WHERE dept_name = 'Sales';
+
+--in descending order list the frequency count of employee last names
+SELECT last_name, COUNT(last_name) AS Frequency
+FROM "Employee"
+GROUP BY last_name
+ORDER BY
+COUNT(last_name) DESC;
